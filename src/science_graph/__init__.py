@@ -55,14 +55,14 @@ class AutoGPTPluginScienceGraph(AutoGPTPluginTemplate):
         prompt.add_command(
             "search_journal_articles",
             "Search journal articles by query",
-            {"query": "<query>"},
+            {"terms": "<terms>"},
             ScienceGraph()._search_journal_articles,
         )
 
         prompt.add_command(
             "search_scholalrly_works",
             "Search any type of scholarly works by query",
-            {"query": "<query>"},
+            {"terms": "<terms>"},
             ScienceGraph()._search_scholarly_works,
         )
 
