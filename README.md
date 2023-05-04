@@ -28,8 +28,12 @@ AutoGPT will use the command 'search_scholarly_works' to find scholarly articles
 17. message_agent: Message GPT Agent, args: "key": "<key>", "message": "<message>"
 18. start_agent: Start GPT Agent, args: "name": "<name>", "task": "<short_task_desc>", "prompt": "<prompt>"
 19. Task Complete (Shutdown): "task_complete", args: "reason": "<reason>"
-20. search_scholarly_works: "Search any scholarly article", args: "keyword": "<keyword>"
-21. search_journal_articles: "Search journal articles", args: "keyword": "<keyword>"
+17. message_agent: Message GPT Agent, args: "key": "<key>", "message": "<message>"
+18. start_agent: Start GPT Agent, args: "name": "<name>", "task": "<short_task_desc>", "prompt": "<prompt>"
+19. Task Complete (Shutdown): "task_complete", args: "reason": "<reason>"
+20. search_journal_articles: "Search journal articles by query", args: "query": "<query>"
+21. search_scholalrly_works: "Search any type of scholarly works by query", args: "query": "<query>"
+
 ```
 ## Contributing
 
