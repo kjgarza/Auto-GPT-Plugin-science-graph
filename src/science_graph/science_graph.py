@@ -1,4 +1,4 @@
-from .api_factory import APIFactory
+from api_factory import APIFactory
 from . import AutoGPTPluginScienceGraph
 
 plugin = AutoGPTPluginScienceGraph()
@@ -13,16 +13,18 @@ class ScienceGraph:
         return api_instance.query(
             """
             query ($keyword: String!) {
-                works(keyword: $keyword) {
-                    titles{
-                      title
-                    }
-                    contentUrl
-                    doi
-                    publicationYear
-                    publisher
-                    descriptions{
-                      description
+                works(query: $keyword) {
+                    nodes {
+                        titles {
+                            title
+                        }
+                        contentUrl
+                        doi
+                        publicationYear
+                        publisher
+                        descriptions {
+                            description
+                        }
                     }
                 }
             }
