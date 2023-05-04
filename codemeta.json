@@ -1,0 +1,32 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "science-graph-plugin",
+  "version": "0.0.1",
+  "description": "A plugin for AutoGPT to access to all scholarly articles, publications, preprints, or works with a DOI, ORCID, ROR or other scholarly identifiers",
+  "author": {
+    "@type": "Person",
+    "name": "Kristian Garza",
+    "email": "kj.garza@gmail.com"
+  },
+  "url": "https://github.com/kjgarza/science-graph-plugin",
+  "license": "https://spdx.org/licenses/MIT",
+  "codeRepository": "https://github.com/kjgarza/science-graph-plugin",
+  "issueTracker": "https://github.com/kjgarza/science-graph-plugin/issues",
+  "softwareRequirements": [
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "scholarly",
+      "version": ">=1.0,<2.0"
+    }
+  ],
+  "programmingLanguage": {
+    "@type": "ComputerLanguage",
+    "name": "Python",
+    "url": "https://www.python.org/",
+    "version": "3.6, 3.7, 3.8, 3.9"
+  },
+  "runtimePlatform": "OS Independent",
+  "developmentStatus": "3 - Alpha",
+  "targetProduct": "AutoGPT"
+}
