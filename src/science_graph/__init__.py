@@ -60,7 +60,7 @@ class AutoGPTPluginScienceGraph(AutoGPTPluginTemplate):
         )
 
         prompt.add_command(
-            "search_scholalrly_works",
+            "search_scholarly_works",
             "Search any type of scholarly works by query",
             {"keyword": "<keyword>"},
             ScienceGraph()._search_scholarly_works,
