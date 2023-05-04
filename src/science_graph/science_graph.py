@@ -1,4 +1,5 @@
-from api_factory import APIFactory
+from .api_factory import APIFactory
+import json
 from . import AutoGPTPluginScienceGraph
 
 plugin = AutoGPTPluginScienceGraph()
@@ -10,7 +11,7 @@ class ScienceGraph:
     
     def _search_scholarly_works(self, keyword):
         api_instance = APIFactory.create_api('graphql')
-        return api_instance.query(
+        response = api_instance.query(
             """
             query ($keyword: String!) {
                 works(query: $keyword) {
@@ -31,8 +32,11 @@ class ScienceGraph:
             """,
             {"keyword": keyword},
         )
+        return json.dumps(response)
     
     def _search_journal_articles(self, keyword):
         api_instance = APIFactory.create_api('rest')
-        return api_instance.query("works", params={"query": keyword})
+        response = api_instance.query("works", params={"query": keyword})
+        return json.dumps(response)
+
         
