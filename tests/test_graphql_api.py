@@ -1,7 +1,6 @@
 import unittest
 from unittest.mock import MagicMock
 from src.science_graph.graphql_api import GraphQLAPI
-
 class TestGraphQLAPI(unittest.TestCase):
 
     def setUp(self):

@@ -1,4 +1,5 @@
 from .api_factory import APIFactory
+from .utils import reduce_reponse, safe_response
 import json
 from . import AutoGPTPluginScienceGraph
 
@@ -16,14 +17,14 @@ class ScienceGraph:
             query ($keyword: String!) {
                 works(query: $keyword) {
                     nodes {
-                        titles {
+                        titles(first: 1) {
                             title
                         }
                         contentUrl
                         doi
                         publicationYear
                         publisher
-                        descriptions {
+                        descriptions(first: 1) {
                             description
                         }
                     }
@@ -32,19 +33,9 @@ class ScienceGraph:
             """,
             {"keyword": keyword},
         )
-        return json.dumps(response)
+        return safe_response(response['works']['nodes'])
     
     def _search_journal_articles(self, keyword):
         api_instance = APIFactory.create_api('rest')
         response = api_instance.query("works", params={"query": keyword})
-        return json.dumps(self.reduce_array_reponse(response['message']['items']))
-    
-    def reduce_array_reponse(self, response):
-        reduced_attributes = ['abstract', 'title', 'URL']
-        reduced_data = [
-            {k: d[k] for k in reduced_attributes if k in d}
-            for d in response
-        ]
-        return reduced_data
-
-        
+        return safe_response(reduce_reponse(response['message']['items']))
