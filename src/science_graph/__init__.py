@@ -66,6 +66,13 @@ class AutoGPTPluginScienceGraph(AutoGPTPluginTemplate):
             ScienceGraph()._search_scholarly_works,
         )
 
+        prompt.add_command(
+            "get_article_or_work",
+            "Gets the html page where href of an article or work is resolved",
+            {"href": "<href>"},
+            ScienceGraph()._get_article_or_work,
+        )
+
         return prompt
 
     def can_handle_on_planning(self) -> bool:
