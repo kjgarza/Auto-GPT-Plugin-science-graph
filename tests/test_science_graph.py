@@ -19,11 +19,11 @@ class TestScienceGraph(unittest.TestCase):
 
     def test_search_journal_articles(self):
         mock_rest_api = MagicMock()
-        mock_rest_api.query.return_value = {"message":{"items":[{"URL": [{"title": "Test Title"}]}]}}
+        mock_rest_api.query.return_value = {"message":{"items":[{"url": [{"title": "Test Title"}]}]}}
         
         with patch.object(APIFactory, 'create_api', return_value=mock_rest_api) as mock_create_api:
             response = self.pid_science_kg._search_journal_articles("test_keyword")
-            self.assertEqual(response, json.dumps([{"URL": [{"title": "Test Title"}]}], ensure_ascii=False, indent=4))
+            self.assertEqual(response, json.dumps([{"url": [{"title": "Test Title"}]}], ensure_ascii=False, indent=4))
             mock_create_api.assert_called_with('rest')
 
 if __name__ == '__main__':

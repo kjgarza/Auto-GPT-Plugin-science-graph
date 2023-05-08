@@ -69,7 +69,7 @@ class AutoGPTPluginScienceGraph(AutoGPTPluginTemplate):
         prompt.add_command(
             "get_article_or_work",
             "Gets the html page where href of an article or work is resolved",
-            {"href": "<href>"},
+            {"url": "<url>"},
             ScienceGraph()._get_article_or_work,
         )
 

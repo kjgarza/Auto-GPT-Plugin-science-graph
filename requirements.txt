@@ -11,3 +11,4 @@ auto_gpt_plugin_template
 gql
 config
 requests
+jinja2
