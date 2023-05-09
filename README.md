@@ -1,5 +1,5 @@
 
-# Science Graph Plugin
+# AutoGPT Science Graph Plugin
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
